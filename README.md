@@ -20,7 +20,7 @@ exchange constraint handling and full request/response logging.
 - logging
 - python-dotenv
 
-##Setup Instructions
+## Setup Instructions
 - Clone the repository
 - Create a virtual environment (optional but recommended)
 - Install dependencies:
@@ -28,3 +28,18 @@ exchange constraint handling and full request/response logging.
     pip install -r requirements.txt
 - Create a .env file
 - Add Binance Futures Testnet API keys
+
+## Usage
+    ### Market Order
+        python cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.002
+
+    ### Limit Order
+        python cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.002 --price 45000
+
+## Logging
+All requests are logged in trading.log with timestamps for post-trade analysis
+
+## Notes
+- The Bot uses Binance Futures Testnet only.
+- Quantity and price are automatically adjusted to match exchange precision rules.
+
